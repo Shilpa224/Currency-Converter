@@ -40,7 +40,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                   Spacer(),
                   CircleAvatar(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.yellow,
                     backgroundImage: AssetImage('images/avatar.png'),
                     radius: 25,
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/utils/appBar.dart';
+import 'package:flutter_project/utils/flagAndName.dart';
 import 'package:flutter_project/utils/inputKey.dart';
 import 'package:flutter_project/utils/textField.dart';
 
@@ -46,9 +47,27 @@ class _OtpScreenState extends State<OtpScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CurrencyTextField(),
-                  SizedBox(height: 40),
-                  CurrencyTextField(),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      flagAndCName(cName: "IND", color: Colors.green),
+                      CurrencyTextField(
+                        controller: _upperTextField,
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    color: Colors.white,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      flagAndCName(cName: "USD", color: Colors.yellowAccent),
+                      CurrencyTextField(
+                        controller: _lowerTextField,
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

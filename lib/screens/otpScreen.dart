@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/utls/inputKey.dart';
+import 'package:flutter_project/utils/appBar.dart';
+import 'package:flutter_project/utils/inputKey.dart';
+import 'package:flutter_project/utils/textField.dart';
 
 class OtpScreen extends StatefulWidget {
   @override
@@ -13,6 +15,15 @@ class _OtpScreenState extends State<OtpScreen> {
   // TextEditingController pinTwoController = TextEditingController();
   // TextEditingController pinThreeController = TextEditingController();
   // TextEditingController pinFourController = TextEditingController();
+  TextEditingController _upperTextField = TextEditingController();
+  TextEditingController _lowerTextField = TextEditingController();
+
+  @override
+  void dispose() {
+    _upperTextField.dispose();
+    _lowerTextField.dispose();
+    super.dispose();
+  }
 
   var outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(10.0),
@@ -27,27 +38,7 @@ class _OtpScreenState extends State<OtpScreen> {
       child: Column(
         children: [
           // buildExitButton(),
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(
-                    Icons.sort,
-                    color: Colors.white,
-                    size: 40,
-                  ),
-                  Spacer(),
-                  CircleAvatar(
-                    backgroundColor: Colors.yellow,
-                    backgroundImage: AssetImage('images/avatar.png'),
-                    radius: 25,
-                  ),
-                ],
-              ),
-            ),
-          ),
+          appBar(),
           Expanded(
             child: Container(
               alignment: Alignment(0, 0),
@@ -55,9 +46,9 @@ class _OtpScreenState extends State<OtpScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // buildSecurityText(),
-                  SizedBox(height: 0),
-                  // buildPinRow(),
+                  CurrencyTextField(),
+                  SizedBox(height: 40),
+                  CurrencyTextField(),
                 ],
               ),
             ),

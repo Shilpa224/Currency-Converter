@@ -9,7 +9,7 @@ class CurrencyTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     var _size = MediaQuery.of(context).size;
     return Container(
-      width: _size.width / 1.3,
+      width: _size.width / 1.4,
       color: Colors.white,
       child: TextField(),
     );

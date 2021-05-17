@@ -18,7 +18,6 @@ class _OtpScreenState extends State<OtpScreen> {
   // TextEditingController pinFourController = TextEditingController();
   TextEditingController _upperTextField = TextEditingController();
   TextEditingController _lowerTextField = TextEditingController();
-
   @override
   void dispose() {
     _upperTextField.dispose();
@@ -88,7 +87,7 @@ class _OtpScreenState extends State<OtpScreen> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+              topLeft: Radius.circular(25), topRight: Radius.circular(25)),
         ),
         child: Padding(
           padding: const EdgeInsets.only(bottom: 32),
